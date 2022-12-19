@@ -1,0 +1,86 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0;
+  border-bottom: 2px solid #fff;
+}
+
+.text {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.text span {
+  font-size: 50px;
+  color: #fff;
+}
+.text form {
+  margin: 10px 0;
+  padding: 5px;
+  height: 40px;
+  width: 300px;
+  background: #fff;
+  border-radius: 5px;
+}
+.text form input {
+  border: none;
+  height: 100%;
+  width: 85%;
+}
+.text form button {
+  height: 100%;
+  width: 15%;
+  border: none;
+  background: none;
+  font-size: 20px;
+}
+
+.infa span {
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+section {
+  text-align: center;
+}
+
+.title {
+  margin: 30px;
+  color: #fff;
+  font-size: 25px;
+}
+
+.line {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 30px;
+}
+
+.foots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #d57d1f;
+  font-size: 20px;
+  padding: 20px;
+  background: #5d4228;
+  margin: 10px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 9px 0 #6d5033;
+  cursor: pointer;
+}
+.block button {
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 18px;
+  box-shadow: 0px 0px 9px 0 #2d2013;
+  background: #d4a16e;
+  border: none;
+}/*# sourceMappingURL=Home.css.map */
