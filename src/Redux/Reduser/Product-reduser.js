@@ -1,16 +1,17 @@
-import { CATEGORY_PRODUCT, ALL_PRODUCT, RANDOM_MEALS } from '../Type'
+import { CATEGORY_PRODUCT, ALL_PRODUCT, RANDOM_MEALS, GET_INFA } from '../Type'
 import { ALL_MEALS } from './../Type';
 
 const initialState = {
     category: [],
     meal: [],
-    ranMeal:[],
+    ranMeal: [],
+    infa: [],
     loading: false,
     error: null
 }
 
 export const ProductReduser = (state = initialState, action) => {
-    // console.log('action>>>>', action)
+    console.log('action>>>>', action)
     switch (action.type) {
 
         case CATEGORY_PRODUCT: {
@@ -37,12 +38,21 @@ export const ProductReduser = (state = initialState, action) => {
             }
         }
 
-        case RANDOM_MEALS:{
+        case RANDOM_MEALS: {
             const { payload } = action
             const newArr = payload
-            return{
+            return {
                 ...state,
                 ranMeal: newArr
+            }
+        }
+
+        case GET_INFA: {
+            const { payload } = action
+            const newArr = payload
+            return {
+                ...state,
+                infa: newArr
             }
         }
 

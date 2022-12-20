@@ -1,4 +1,4 @@
-import { CATEGORY_PRODUCT, ALL_PRODUCT, ALL_MEALS, RANDOM_MEALS } from "./Type";
+import { CATEGORY_PRODUCT, ALL_PRODUCT, ALL_MEALS, RANDOM_MEALS, GET_INFA } from "./Type";
 
 export const categoryProduct = (data) => {
     return {
@@ -15,18 +15,26 @@ export const allProduct = (data) => {
     }
 }
 
-export const allMeals =(data)=>{
+export const allMeals = (data) => {
     // console.log('allMeals>>>', data)
-    return{
+    return {
         type: ALL_MEALS,
         payload: data
     }
 }
 
-export const getRandomMeal = (data)=>{
+export const getRandomMeal = (data) => {
     // console.log('getRandomMeal>>>aaa',data)
-    return{
+    return {
         type: RANDOM_MEALS,
+        payload: data
+    }
+}
+
+export const setInfa = (data) => {
+    // console.log('setInfa>>>', data)
+    return {
+        type: GET_INFA,
         payload: data
     }
 }

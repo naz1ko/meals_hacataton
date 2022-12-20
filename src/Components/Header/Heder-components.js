@@ -3,6 +3,7 @@ import './scss/Header.css'
 import { Link } from 'react-router-dom';
 import Meals from './../Meals/Meals';
 import { Routes, Route } from 'react-router-dom';
+import Information from '../Information/Information';
 
 const HederComponents = () => {
     return (
@@ -27,6 +28,7 @@ const HederComponents = () => {
             </header>
             <Routes>
                 <Route path='/meals' element={<Meals />} />
+                <Route path='/infa' element={<Information />} />
             </Routes>
         </div>
     )

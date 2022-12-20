@@ -25,7 +25,7 @@ const Home = () => {
         const setMeals = async () => {
             await services.setMeals(elem)
                 .then((res => {
-                    console.log(res.data.meals);
+                    // console.log(res.data.meals);
                     dispatch(allMeals(res.data.meals))
                 }))
         }

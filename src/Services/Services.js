@@ -14,8 +14,8 @@ export const randomMeals = ()=>{
     return axios.get('random.php')
 }
 
-export const ingredient = ()=>{
-    return axios.get(`lookup.php?i=52772`)
+export const ingredient = (elem)=>{
+    return axios.get(`lookup.php?i=${elem}`)
 }
 
 export const services = {
