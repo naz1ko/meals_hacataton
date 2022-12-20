@@ -3,7 +3,8 @@ import './scss/Home.css'
 import Main from '../Main/Main';
 import { useSelector, useDispatch } from 'react-redux';
 import { services } from '../../Services/Services';
-import { allProduct, producktClick } from '../../Redux/Action';
+import { allProduct, allMeals, getRandomMeal } from '../../Redux/Action';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const { category } = useSelector(state => state.ProductReduser)
@@ -20,27 +21,51 @@ const Home = () => {
         categoryProduct()
     }, [])
 
+    const productClick = (elem) => {
+        const setMeals = async () => {
+            await services.setMeals(elem)
+                .then((res => {
+                    console.log(res.data.meals);
+                    dispatch(allMeals(res.data.meals))
+                }))
+        }
+        setMeals(elem)
+    }
+
+    useEffect(() => {
+        const randomMeals = async () => {
+            await services.randomMeals()
+                .then((res) => {
+                    console.log('randomMeals>>>', res.data.meals);
+                    dispatch(getRandomMeal(res.data.meals))
+                })
+        }
+        randomMeals()
+    }, [])
+
 
     return (
         <>
             <Main />
             <div className="container">
                 <section className='latestMeals'>
-                    <div className="title">Random Meals</div>
+                    <div className="title">Meals categories</div>
                     <div className="foots line">
                         {
-                            category.map((elem, i) => {
+                            category.map((elem) => {
                                 return (
-                                    <div className="foot block" onClick={() => dispatch(producktClick(elem.strCategory))}>
-                                        <img width='200px' src={elem.strCategoryThumb} alt="" />
-                                        <span>{elem.strCategory}</span>
-                                    </div>
+                                    <Link to='/meals'>
+                                        <div className="category" onClick={() => dispatch(productClick(elem.strCategory))}>
+                                            <img width='200px' src={elem.strCategoryThumb} alt="" />
+                                            <span>{elem.strCategory}</span>
+                                        </div>
+                                    </Link>
                                 )
                             })
                         }
 
                     </div>
-                </section>  
+                </section>
 
                 <section className='randomMeals'>
                     <div className="title">Random Meals</div>
@@ -52,7 +77,7 @@ const Home = () => {
                         <div className="randomMeals block">
                             <img width='200px' src="https://www.themealdb.com/images/media/meals/vwrpps1503068729.jpg" alt="" />
                             <span>Katsu Chicken curry</span>
-                            <button>Add to card</button>
+                            <button className='addToCard'>Add to card</button>
                         </div>
                     </div>
                 </section>

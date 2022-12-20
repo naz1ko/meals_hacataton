@@ -3,3 +3,12 @@
     width : 1100px;
     border: 2px solid red;
 }
+
+.ranMeal img{
+    width: 150px;
+    height: 150px;
+}
+
+.ranMeal{
+    width: 200px;
+}

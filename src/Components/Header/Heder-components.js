@@ -1,6 +1,8 @@
 import React from 'react'
 import './scss/Header.css'
 import { Link } from 'react-router-dom';
+import Meals from './../Meals/Meals';
+import { Routes, Route } from 'react-router-dom';
 
 const HederComponents = () => {
     return (
@@ -23,6 +25,9 @@ const HederComponents = () => {
                     </nav>
                 </div>
             </header>
+            <Routes>
+                <Route path='/meals' element={<Meals />} />
+            </Routes>
         </div>
     )
 }
