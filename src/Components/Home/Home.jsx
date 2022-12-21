@@ -36,7 +36,7 @@ const Home = () => {
         const randomMeals = async () => {
             await services.randomMeals()
                 .then((res) => {
-                    console.log('randomMeals>>>', res.data.meals);
+                    // console.log('randomMeals>>>', res.data.meals);
                     dispatch(getRandomMeal(res.data.meals))
                 })
         }
@@ -54,7 +54,7 @@ const Home = () => {
                         {
                             category.map((elem) => {
                                 return (
-                                    <Link to='/meals'>
+                                    <Link key={elem.strCategory} to='/meals'>
                                         <div className="category" onClick={() => dispatch(productClick(elem.strCategory))}>
                                             <img width='200px' src={elem.strCategoryThumb} alt="" />
                                             <span>{elem.strCategory}</span>
@@ -63,36 +63,6 @@ const Home = () => {
                                 )
                             })
                         }
-
-                    </div>
-                </section>
-
-                <section className='randomMeals'>
-                    <div className="title">Random Meals</div>
-
-                    <div className="foots line">
-
-
-
-                        <div className="randomMeals block">
-                            <img width='200px' src="https://www.themealdb.com/images/media/meals/vwrpps1503068729.jpg" alt="" />
-                            <span>Katsu Chicken curry</span>
-                            <button className='addToCard'>Add to card</button>
-                        </div>
-                    </div>
-                </section>
-
-                <section className='randomIngredients'>
-                    <div className="title">Random Ingredients</div>
-
-                    <div className="foots line">
-
-
-
-                        <div className="randomIngredientss block">
-                            <img width='200px' src="" alt="" />
-                            <span>Turnips</span>
-                        </div>
                     </div>
                 </section>
 
@@ -104,7 +74,7 @@ const Home = () => {
                 </section>
 
                 <section>
-                    <div className="letters block">
+                    <div className="letters category">
                         <div className="title">Browse By Name</div>
                         <span>A/</span>
                     </div>
@@ -115,7 +85,3 @@ const Home = () => {
 }
 
 export default Home
-
-
-
-// `https://www.themealdb.com/images/ingredients/{}.png`

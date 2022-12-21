@@ -34,5 +34,6 @@ nav .link-input input {
 
 a, li {
   text-decoration: none;
+  list-style: none;
   color: #fff;
 }/*# sourceMappingURL=Header.css.map */

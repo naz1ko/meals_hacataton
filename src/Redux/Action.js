@@ -1,4 +1,12 @@
-import { CATEGORY_PRODUCT, ALL_PRODUCT, ALL_MEALS, RANDOM_MEALS, GET_INFA } from "./Type";
+import {
+    CATEGORY_PRODUCT,
+    GET_SEARCH,
+    ALL_PRODUCT,
+    ALL_MEALS,
+    RANDOM_MEALS,
+    GET_INFA
+} from "./Type";
+
 
 export const categoryProduct = (data) => {
     return {
@@ -36,5 +44,17 @@ export const setInfa = (data) => {
     return {
         type: GET_INFA,
         payload: data
+    }
+}
+
+// export const setSearch = (e) => {
+//     // console.log('e>>>', e)
+// }
+
+export const getSearch = (data)=>{
+    console.log('data>>>s', data)
+    return{
+        type: GET_SEARCH,
+        payload:data
     }
 }

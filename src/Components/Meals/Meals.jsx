@@ -22,12 +22,12 @@ const Meals = () => {
     return (
         <div className="container">
             <section className='latestMeals'>
-                <div className="title">Meals {meal.length}</div>
+                <div className="title">Meals {meal.length}</div>        
                 <div className="foots line">
                     {
                         meal.map((element) => {
                             return (
-                                <Link to='/infa'>
+                                <Link key={element.idMeal} to='/infa'>
                                     <div className="foot block" onClick={() => dispatch(mealClick(element.idMeal))}>
                                         <img width='200px' src={element.strMealThumb} alt="" />
                                         <span>{element.strMeal}</span>

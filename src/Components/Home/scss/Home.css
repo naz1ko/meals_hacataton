@@ -54,7 +54,6 @@ section {
 
 .line {
   border-bottom: 2px solid #fff;
-  padding-bottom: 30px;
 }
 
 .foots {
@@ -104,4 +103,10 @@ section {
   color: #fff;
   margin-bottom: 10px;
   cursor: cell;
+}
+
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }/*# sourceMappingURL=Home.css.map */

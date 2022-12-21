@@ -18,9 +18,14 @@ export const ingredient = (elem)=>{
     return axios.get(`lookup.php?i=${elem}`)
 }
 
+export const search=(e)=>{
+    return axios.get(`search.php?s=${e}`)
+}
+
 export const services = {
     categoryProduct,
     setMeals,
     randomMeals,
-    ingredient
+    ingredient,
+    search,
 }

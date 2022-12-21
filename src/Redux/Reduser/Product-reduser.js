@@ -1,11 +1,19 @@
-import { CATEGORY_PRODUCT, ALL_PRODUCT, RANDOM_MEALS, GET_INFA } from '../Type'
-import { ALL_MEALS } from './../Type';
+import {
+    CATEGORY_PRODUCT,
+    ALL_PRODUCT,
+    RANDOM_MEALS,
+    GET_INFA,
+    GET_SEARCH,
+    ALL_MEALS
+} from '../Type'
 
 const initialState = {
     category: [],
     meal: [],
     ranMeal: [],
     infa: [],
+    search: [],
+    product:[],
     loading: false,
     error: null
 }
@@ -55,6 +63,16 @@ export const ProductReduser = (state = initialState, action) => {
                 infa: newArr
             }
         }
+
+        case GET_SEARCH: {
+            const { payload } = action
+            const newArr = payload
+            return {
+                ...state,
+                product: newArr
+            }
+        }
+
 
         default:
             return state
