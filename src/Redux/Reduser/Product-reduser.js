@@ -4,7 +4,8 @@ import {
     RANDOM_MEALS,
     GET_INFA,
     GET_SEARCH,
-    ALL_MEALS
+    ALL_MEALS,
+    GET_TO_CARD
 } from '../Type'
 
 const initialState = {
@@ -13,13 +14,14 @@ const initialState = {
     ranMeal: [],
     infa: [],
     search: [],
-    product:[],
+    product: [],
+    card: [],
     loading: false,
     error: null
 }
 
 export const ProductReduser = (state = initialState, action) => {
-    console.log('action>>>>', action)
+    // console.log('action>>>>', action)
     switch (action.type) {
 
         case CATEGORY_PRODUCT: {
@@ -73,6 +75,14 @@ export const ProductReduser = (state = initialState, action) => {
             }
         }
 
+        case GET_TO_CARD: {
+            const { id } = action.payload
+            const newArr = state.meal.filter(elem => elem.idMeal === id)
+            return {
+                ...state,
+                card: [...state.card, newArr ]
+            }
+        }
 
         default:
             return state

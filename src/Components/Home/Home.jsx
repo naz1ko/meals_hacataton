@@ -55,7 +55,7 @@ const Home = () => {
                             category.map((elem) => {
                                 return (
                                     <Link key={elem.strCategory} to='/meals'>
-                                        <div className="category" onClick={() => dispatch(productClick(elem.strCategory))}>
+                                        <div className="category" onClick={() => productClick(elem.strCategory)}>
                                             <img width='200px' src={elem.strCategoryThumb} alt="" />
                                             <span>{elem.strCategory}</span>
                                         </div>

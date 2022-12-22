@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { services } from '../../Services/Services';
 import { Link } from 'react-router-dom';
-import { getSearch } from '../../Redux/Action'
-import { setInfa } from '../../Redux/Action';
+import { getSearch, setInfa } from '../../Redux/Action'
 
 const Main = () => {
     const { ranMeal, product } = useSelector(state => state.ProductReduser)
@@ -47,14 +46,13 @@ const Main = () => {
                 {
                     ranMeal.map((element) => {
                         return (
-                            <Link key={element.idMeal} to='/infa'>
-                                <div className='ranMeal category' onClick={() => dispatch(mealClick(element.idMeal))}>
-                                    <span style={{ color: '#fff' }}>Random meals</span>
-                                    <img src={element.strMealThumb} alt="" />
-                                    <span>{element.strMeal}</span>
-                                    <button className='addToCard'>Add to card</button>
-                                </div>
-                            </Link>
+
+                            <div className='ranMeal category' onClick={() => dispatch(mealClick(element.idMeal))}>
+                                <span style={{ color: '#fff' }}>Random meals</span>
+                                <Link key={element.idMeal} to='/infa'><img src={element.strMealThumb} alt="" />
+                                    <span>{element.strMeal}</span></Link>
+                            </div>
+
                         )
                     })
                 }
@@ -66,7 +64,7 @@ const Main = () => {
                             onChange={(e) => setInput(e.target.value)}
                             placeholder='Search for a Meal ...' />
                         <input type="submit" hidden />
-                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button><i className='fa-solid fa-magnifying-glass'></i></button>
                     </form>
                     <div className="infa">
                         <img src="https://www.themealdb.com/images/icons/meal-icon6.png" alt="" />
@@ -80,7 +78,7 @@ const Main = () => {
                 {
                     ranMeal.map((element) => {
                         return (
-                            <Link to='/infa'>
+                            <Link key={element.idMeal} to='/infa'>
                                 <div className='ranMeal category'>
                                     <span style={{ color: '#fff' }}>Random meals</span>
                                     <img src={element.strMealThumb} alt="" />
@@ -92,12 +90,12 @@ const Main = () => {
                     })
                 }
             </section>
-            
+
             <div className='product line'>
                 {
                     product.map((element) => {
                         return (
-                            <Link to='/infa'>
+                            <Link key={element.idMeal} to='/infa'>
                                 <div className="foot block" onClick={() => setInfa(element.idMeal)}>
                                     <img width='200px' src={element.strMealThumb} alt="" />
                                     <span>{element.strMeal}</span>

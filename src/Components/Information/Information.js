@@ -5,7 +5,7 @@ import './information.css'
 
 const Information = () => {
     const { infa } = useSelector(state => state.ProductReduser)
-    console.log('infa>>>', infa)
+    // console.log('infa>>>', infa)
 
     return (
         <div>

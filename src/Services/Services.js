@@ -22,10 +22,15 @@ export const search=(e)=>{
     return axios.get(`search.php?s=${e}`)
 }
 
+export const addCard=(element)=>{
+    return axios.get(`lookup.php?i=${element}`)
+}
+
 export const services = {
     categoryProduct,
     setMeals,
     randomMeals,
     ingredient,
     search,
+    addCard
 }

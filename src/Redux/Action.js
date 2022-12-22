@@ -4,7 +4,8 @@ import {
     ALL_PRODUCT,
     ALL_MEALS,
     RANDOM_MEALS,
-    GET_INFA
+    GET_INFA,
+    GET_TO_CARD
 } from "./Type";
 
 
@@ -47,14 +48,18 @@ export const setInfa = (data) => {
     }
 }
 
-// export const setSearch = (e) => {
-//     // console.log('e>>>', e)
-// }
-
-export const getSearch = (data)=>{
-    console.log('data>>>s', data)
-    return{
+export const getSearch = (data) => {
+    // console.log('data>>>s', data)
+    return {
         type: GET_SEARCH,
-        payload:data
+        payload: data
+    }
+}
+
+export const addToCard = (id) => {
+    console.log("id>>>", id)
+    return {
+        type: GET_TO_CARD,
+        payload: id
     }
 }
